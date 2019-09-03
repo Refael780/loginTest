@@ -1,0 +1,29 @@
+<h1>this is the list</h1>
+
+
+<form action="/hello2" method="POST">
+<button  > btn
+</button>
+
+</form>
+
+
+    <form action="/hello2/tst" method="POST">
+        <input type="text" name="newName">
+        <input type="text" name="id">
+        <button  > btn
+        </button>
+        
+    </form>
+    <% if(isLogin){%>
+     
+<% user.forEach(function(element){  %> 
+
+    <h4><%= element.name %></h4>
+    
+        <%  }); %>   
+   <% } %>
+
+
+
+

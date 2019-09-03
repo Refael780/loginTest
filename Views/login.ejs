@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900&amp;display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' type='text/css' media='screen' href='desgin.css'>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Togg le navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Brand</a>
+                  </div>
+              
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                 
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a  href="/LogOut">Logout</a></li>
+                   
+                        </ul>
+                      </li>
+                    </ul>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+              </nav>
+    <div class="container">
+        <div class="jumbotron">
+           
+          <% if(isLogin){ %>
+            <h1> hello  <%= connectedUser %></h1>
+          <% } else{ %>
+          
+             <h1 id="Login">Login</h1>
+            <hr>
+            <h3>Login Menu</h3>
+            <% } %>
+        </div>
+       <div class="row">
+           <div class="col-lg-6 6 col-md-6 col-sm-12 col-xs-12">
+
+                <form id="LoginForm" action="/addUser" method="POST">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">UserName</label>
+                          <input name="userName" type="text" class="form-control" id="exampleInputEmail1" placeholder="UserName">
+                        </div>
+                        <div class="form-group">
+                          <label for="PasswordInput">Password</label>
+                          <input name="newPassword" id="passInput" type="password" class="form-control"  placeholder="Password">
+                        </div>
+                     
+                        <button    class="btn btn-primary">Login</button>
+                      </form>
+                      <% if(isLogin){  %>   
+                <form action="/newComment/" method="POST" id="descArea">
+                       
+                        <div class="form-group">
+                          <label for="textarea">Write Status</label>
+                          <input name="description" id="textarea" type="textarea" class="form-control"  placeholder="Write Somthing">
+                        </div>
+                     
+                        <button onclick="addComment()"  class="btn btn-primary">Confirm</button>
+                      </form>
+                      <% } %>
+
+
+      
+           </div>
+           
+           <div class="col-lg-6 6 col-md-6 col-sm-12 col-xs-12 pt-3">
+            <div id="listUser">
+              
+              <% if(isLogin){  %>
+                <script> document.getElementById("listUser").style.display="block"; 
+                 document.getElementById("LoginForm").style.display="none";
+                 document.getElementById("descArea").style.display="block";
+                console.log(userMap);
+
+                </script>
+                <ul id="dynamic-list">
+              
+                <% userMap.forEach(function(element){  %> 
+
+                  <li><%= element.name  %>
+                    <img class="img-circle imgTOlist" src="<%= element.image  %>"/>
+                   <br/>
+                  <h5><%= element.comment %></h5>
+      
+                  </li>
+                  
+                      <%  }); %>   
+
+                  <% } %>
+                </ul>
+            </div>
+            </div>
+       </div>
+
+              
+    </div>
+    
+</body>
+
+<script type="text/javascript">
+function addComment()
+{
+  alert("comment added seccsefuly");
+}
+
+///Global Env
+
+
+
+
+</script>
+</html>

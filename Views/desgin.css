@@ -1,0 +1,78 @@
+body{
+    background: url("https://images.unsplash.com/photo-1543185377-b75671ac8741?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+form{
+    color: white;
+}
+.jumbotron{
+    margin-top: 15px;
+    color: #2c3e50;
+    background: #ecf0f1;
+    text-align: center;
+}
+
+#exampleInputEmail1{
+    width: 75%;
+}
+#passInput
+{
+    width: 75%; 
+}
+li{
+border: 1px solid #EEEEEE;
+
+    background: #f0f8ff ;
+    list-style-type: none;
+   
+}
+img{
+  position: center;
+  width: 80%;
+  height: 80%;
+  background-size: cover;
+  
+}
+h1{
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 5em;
+    color: white;
+
+}
+.headLine{
+    float: left;
+    width: 100%;
+}
+
+
+.imgTOlist{
+   
+    float: right;
+    position: center;
+    width: 25%;
+    height:130px;
+    background-size: cover;
+}
+
+#dynamic-list li
+{
+    float: left;
+  
+
+}
+#textarea{
+    width: 500px;
+    height: 100px;
+}
+#descArea{
+  
+    display: none;
+}
+#listUser{
+    display: none;
+}
