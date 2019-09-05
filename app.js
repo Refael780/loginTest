@@ -1,6 +1,8 @@
 
-var express=require("express");
-app=express();
+var express = require('express')
+  , http = require('http')
+  , app = express()
+  , server = http.createServer(app)
 var bodyParser=require("body-parser");
 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -162,10 +164,9 @@ app.post("/newComment/" ,function(req,res){
 
 
 
-app.listen(3000,function(){
-
-    console.log("server1 start");
-})
+server.listen(3000,'0.0.0.0',function(){
+  console.log("server");
+   })
 
 
 /*
