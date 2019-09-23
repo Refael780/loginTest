@@ -164,7 +164,7 @@ app.post("/newComment/" ,function(req,res){
 
 
 
-server.listen(3000,'0.0.0.0',function(){
+server.listen(80,'0.0.0.0',function(){
   console.log("server");
    })
 
